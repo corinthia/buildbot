@@ -1,2 +1,64 @@
 {
+  "repo_url"   : "https://github.com/corinthia",
+  "repo_build" : "buildbot",
+  "repos"      : [
+	           "corinthia-docformats" :
+		   {
+	             "branches"           : [ "master", "odflenses" ],
+		     "test"               : "test.exe ..."
+	           },
+		   "corinthia-editorlib"  :
+		   {
+	             "branches"           : [ "master" ],
+		     "test"               : "test.exe ..."
+	           },
+		   "corinthia-webapp"     :
+		   {
+	             "branches"           : [ "master" ],
+		     "test"               : "test.exe ..."
+	           },
+		   "corinthia-qtapp"      :
+		   {
+	             "branches"           : [ "master" ],
+		     "test"               : "test.exe ..."
+	           },
+		   "corinthia-flat"       :
+		   {
+	             "branches"           : [ "master" ],
+		     "test"               : "test.exe ..."
+	           }
+                 ],
+  "platforms"  : [
+	           "windows32"   : 
+		   {
+	             "cmake"     : "-G \"visual studio 12\"",
+		     "run"       : "vcc -n x",
+	             "vm"        : "winDev"
+	           },
+	           "windows64"  : 
+		   {
+	             "cmake"     : "-G \"visual studio 12\" -A 64",
+		     "run"       : "vcc -n x",
+	             "vm"        : "winDev"
+	           },
+                   "ubuntu"      : 
+		   {
+	             "cmake"     : "-G \"Unix makefiles\"",
+		     "run"       : "make",
+	             "vm"        : "winDev"
+	           },
+                   "os-x"        : 
+		   {
+	             "cmake"     : "-G \"Unix makefiles\"",
+		     "run"       : "make",
+	             "vm"        : "winDev"
+	           },
+                   "fedora"        : 
+		   {
+	             "cmake"     : "-G \"Unix makefiles\"",
+		     "run"       : "make",
+	             "vm"        : "winDev"
+	           }
+                 ]
 }
+	             
