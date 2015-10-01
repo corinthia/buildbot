@@ -31,49 +31,100 @@
                 ],
   "platforms" : [
                   {
-                    "name"         : "windows32",
+                    "name"         : "windows",
+                    "vm"           : "winDev",
                     "repo_dir"     : "c:/Users/jani/opensource/Corinthia",
-                    "build_dir"    : "C:/Users/jani/opensource/Corinthia/buildbot/builds",   
-                    "cmakeDebug"   : "-G \"visual studio 12\"",
-                    "cmakeRelease" : "-G \"visual studio 12\"",
-                    "run"          : "vcc -n x",
-                    "vm"           : "winDev"
-                  },
-                  {
-                    "name"         : "windows64",
-                    "repo_dir"     : "c:/Users/jani/opensource/Corinthia",
-                    "build_dir"    : "C:/Users/jani/opensource/Corinthia/buildbot/builds",   
-                    "cmakeDebug"   : "-G \"visual studio 12\"",
-                    "cmakeRelease" : "-G \"visual studio 12\"",
-                    "run"          : "vcc -n x",
-                    "vm"           : "winDev"
+                    "build_dir"    : "C:/Users/jani/opensource/Corinthia/tmp_builds",   
+                    "test_dir"     : "C:/Users/jani/opensource/Corinthia/tmp_tests",   
+                    "builds"       : [
+                                       {
+                                         "name"  : "debug32",
+                                         "cmake" : "-G \"visual studio 12\" --d ",
+                                         "build" : "vcc -n x",
+                                         "test"  : "test x"
+                                       },
+                                       {
+                                         "name"  : "debug64",
+                                         "cmake" : "-G \"visual studio 12\" --d -a 64",
+                                         "build" : "vcc -n x",
+                                         "test"  : "test x"
+                                       },
+                                       {
+                                         "name"  : "release32",
+                                         "cmake" : "-G \"visual studio 12\"",
+                                         "build" : "vcc -n x",
+                                         "test"  : "test x"
+                                       },
+                                       {
+                                         "name"  : "release64",
+                                         "cmake" : "-G \"visual studio 12\" -a 64",
+                                         "build" : "vcc -n x",
+                                         "test"  : "test x"
+                                       }
+                                     ]
                   },
                   {
                     "name"         : "ubuntu",
                     "repo_dir"     : "/users/jani/corinthia",
-                    "build_dir"    : "/users/jani/opensource/Corinthia/buildbot/builds",   
-                    "cmakeDebug"   : "-G \"Unix makefies\"",
-                    "cmakeRelease" : "-G \"Unix makefies\"",
-                    "run"          : "make",
-                    "vm"           : "winDev"
+                    "build_dir"    : "/users/jani/opensource/Corinthia/tmp_builds",   
+                    "test_dir"     : "/users/jani/opensource/Corinthia/tmp_tests",   
+                    "vm"           : "ubuntuDev",
+                    "builds"       : [
+                                       {
+                                         "name"  : "debug",
+                                         "cmake" : "-G \"Unix makefiles\" --d ",
+                                         "build" : "make",
+                                         "test"  : "test x"
+                                       },
+                                       {
+                                         "name"  : "release",
+                                         "cmake" : "-G \"Unix makefiles\"",
+                                         "build" : "make",
+                                         "test"  : "test x"
+                                       }
+                                     ]
                   },
                   {
                     "name"         : "os-x",
                     "repo_dir"     : "/Users/jani/corinthia",
                     "build_dir"    : "/Users/jani/opensource/Corinthia/buildbot/builds",   
-                    "cmakeDebug"   : "-G \"Unix makefies\"",
-                    "cmakeRelease" : "-G \"Unix makefies\"",
-                    "run"          : "make",
-                    "vm"           : "winDev"
+                    "test_dir"     : "/Users/jani/opensource/Corinthia/tmp_tests",   
+                    "vm"           : "osxDev",
+                    "builds"       : [
+                                       {
+                                         "name"  : "debug",
+                                         "cmake" : "-G \"Unix makefiles\" --d ",
+                                         "build" : "make",
+                                         "test"  : "test x"
+                                       },
+                                       {
+                                         "name"  : "release",
+                                         "cmake" : "-G \"Unix makefiles\"",
+                                         "build" : "make",
+                                         "test"  : "test x"
+                                       }
+                                     ]
                   },
                   {
                     "name"         : "fedora",
                     "repo_dir"     : "/Users/jani/corinthia",
                     "build_dir"    : "/Users/jani/opensource/Corinthia/buildbot/builds",   
-                    "cmakeDebug"   : "-G \"Unix makefies\"",
-                    "cmakeRelease" : "-G \"Unix makefies\"",
-                    "run"          : "make",
-                    "vm"           : "winDev"
+                    "test_dir"     : "/Users/jani/opensource/Corinthia/tmp_tests",   
+                    "vm"           : "fedoraDev",
+                    "builds"       : [
+                                       {
+                                         "name"  : "debug",
+                                         "cmake" : "-G \"Unix makefiles\" --d ",
+                                         "build" : "make",
+                                         "test"  : "test x"
+                                       },
+                                       {
+                                         "name"  : "release",
+                                         "cmake" : "-G \"Unix makefiles\"",
+                                         "build" : "make",
+                                         "test"  : "test x"
+                                       }
+                                     ]
                   }
                 ]
 }

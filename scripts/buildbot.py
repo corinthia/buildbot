@@ -37,10 +37,13 @@ import json
 # -----   S E T U P   -----
 def setup() :
 ### Load build.json, and change working directory
-    global buildConfig
+  global buildConfig
 
-    jsFile = open('build.json')
-    buildConfig = json.load(jsFile)
+  # Load local configuration file
+  jsFile = open('build.json')
+  buildConfig = json.load(jsFile)
+
+  # Clean source repos
 
 
 
